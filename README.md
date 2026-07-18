@@ -3,19 +3,46 @@
 Prototype for Challenge 3 — patient experience, from today until the
 hospital of the future. Built at the RUNI Innovation Hackathon SS2026.
 
-## Status
+## Installation
 
-Pre-build. The team is still working through the pitch deck; no prototype
-code exists yet. See `HACKATHON.md` for live progress.
+No installation or dependencies required. The prototype is plain
+HTML/CSS/JS — no npm, no build step, no package manager.
 
-## Docs
+## Run
 
-- `CLAUDE.md` — static build rules and scope boundaries for this challenge
-- `HACKATHON.md` — live plan: scenario, task board, decisions, blockers
-- `DEMO.md` — presentation script and fallback plan
+From the repo root, serve the `prototype/` folder with a local static
+server (opening `index.html` directly via `file://` will break the
+scenario-data fetch — see Troubleshooting):
 
-## Setup
+```
+python3 -m http.server 5173 --directory prototype
+```
 
-_To be filled in once the prototype exists and the tech stack (React/Vite
-vs. plain HTML/CSS/JS) is chosen — see `CLAUDE.md` § Technical approach._
+Then open http://localhost:5173/ in a browser. Use the browser's
+device toolbar / responsive mode to preview at mobile width, since the
+demo is designed and presented as a mobile-sized prototype.
 
+## Required software versions
+
+- Python 3.8+ (ships with macOS/Linux; used only to run the local static
+  server above — `python3 --version` to check)
+- Any current evergreen browser (Chrome, Safari, or Edge, last 2 major
+  versions)
+
+## Important links
+
+- Challenge brief (Hebrew, original): `00_Overview/challenge3_theask.pdf`
+- Live control board (scenario, scope, task board, decisions): `HACKATHON.md`
+- Presentation script and fallback plan: `DEMO.md`
+- Static build rules and scope boundaries: `CLAUDE.md`
+- Repo: https://github.com/adunietz/runi-hackathon-ss2026
+
+## Troubleshooting
+
+**Scenario data doesn't load / screens render blank.** This almost
+always means the app was opened directly from disk (double-clicked
+`index.html`, or a `file://...` URL in the address bar) instead of
+through the local server. Browsers block `fetch()` of local JSON files
+under `file://` due to CORS, so the scenario JSON silently fails to
+load. Fix: stop, then re-open via `http://localhost:5173/` using the
+`python3 -m http.server` command above.

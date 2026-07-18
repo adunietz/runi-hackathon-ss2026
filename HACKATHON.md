@@ -72,12 +72,23 @@ _TBD after slide 8 — fill in once persona/moment/barrier/outcome are picked._
 | Prepare presentation | | | Not started |
 | Test and rehearse | Everyone | | Not started |
 
+## Branch convention
+
+- `main` — always demo-able; merge into this only when a flow works end to end.
+- `feature/person-short-task` — everything else, e.g. `feature/anna-screen2-status`.
+
 ## Decisions
 
 _Log each non-obvious decision with a timestamp and the reason — this is
 what protects the team from re-litigating choices under time pressure._
 
-- —
+- 2026-07-18 — Tech stack: plain HTML/CSS/JS, no framework. Reason: keeps
+  install/run to zero dependencies, matches `CLAUDE.md`'s fallback option.
+- 2026-07-18 — Prototype code will live in a top-level `prototype/` folder
+  (README's run command assumes this path). Reason: needed a concrete path
+  to document `README.md`'s run command before build actually starts.
+- 2026-07-18 — Branch convention: `main` + `feature/person-short-task`.
+  Reason: simple enough to not need explaining mid-hackathon.
 
 ## Current blocker
 
