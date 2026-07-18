@@ -114,24 +114,16 @@ already nailed down, in order:
 5. **Build only that flow.** No extra screens, no extra states, no "while
    we're at it."
 
-When the team is ready to build, fill in the `## Scenario` section below (or
-hand it to Claude Code directly) with the concrete answers to steps 1–3, then
-ask for the screen-by-screen spec before generating code.
+When the team is ready to build, fill in the `## Core journey` and `## Scope`
+sections of `HACKATHON.md` (or hand the concrete answers to Claude Code
+directly) with the answers to steps 1–3, then ask for the screen-by-screen
+spec before generating code.
 
 ## Scenario
 
-_To be filled in at the hackathon, after slide 8._
-
-- **User / persona**:
-- **Moment in their journey**:
-- **Barrier**:
-- **Desired outcome**:
-- **The interaction that proves the insight**:
-- **Screen list (4–6 screens)**:
-  1.
-  2.
-  3.
-  4.
+Live scenario details (persona, moment, barrier, desired outcome, screen
+list) are tracked in `HACKATHON.md`, not here — that file is the one to
+update once slide 8 is done. This file stays static.
 
 ## Repo layout
 
@@ -144,9 +136,26 @@ _To be filled in at the hackathon, after slide 8._
 
 ## Working notes for Claude Code
 
+- This is a time-boxed hackathon build. Optimize for a reliable demo, not
+  production readiness.
 - Keep implementation minimal and literal to the agreed screen list — this
   document's "do NOT build" list is a hard boundary, not a suggestion.
 - Prefer finishing a rough end-to-end click-through over polishing any single
   screen — a complete ugly flow beats a beautiful incomplete one for the demo.
 - Don't add tests, CI, linting setup, or tooling scaffolding — there's no time
   budget for it and it's not what's being judged.
+- Don't add features or screens beyond what's recorded in `HACKATHON.md`'s
+  scope section — if it's not on the "must have" list, it's not in scope.
+- Before declaring a build task complete, run the app and click through the
+  demo journey — don't rely on a type check or a glance at the code.
+- Preserve working functionality when making changes late in the build —
+  a regression right before the demo is worse than a missing nice-to-have.
+
+## Live tracking
+
+- `HACKATHON.md` — the live control board: scenario, scope, task ownership,
+  decisions, and current blockers. Update it, not this file.
+- `DEMO.md` — the presentation script and fallback/recovery plan.
+
+@HACKATHON.md
+@DEMO.md
