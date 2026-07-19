@@ -1,7 +1,8 @@
 # runi-hackathon-ss2026
 
-Prototype for Challenge 3 — patient experience, from today until the
-hospital of the future. Built at the RUNI Innovation Hackathon SS2026.
+Prototype for Challenge 2 — smart management of ambulatory patients,
+across the pre-arrival-to-follow-up journey. Built at the RUNI Innovation
+Hackathon SS2026.
 
 ## Installation
 
@@ -31,7 +32,7 @@ demo is designed and presented as a mobile-sized prototype.
 
 ## Important links
 
-- Challenge brief (Hebrew, original): `00_Overview/challenge3_theask.pdf`
+- Challenge brief (Hebrew, original): `00_Overview/challenge2_theask.pdf`
 - Live control board (scenario, scope, task board, decisions): `HACKATHON.md`
 - Presentation script and fallback plan: `DEMO.md`
 - Static build rules and scope boundaries: `CLAUDE.md`

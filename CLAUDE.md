@@ -1,40 +1,61 @@
-# RUNI Innovation Hackathon SS2026 — Challenge 3 Prototype
+# RUNI Innovation Hackathon SS2026 — Challenge 2 Prototype
 
 ## Event
 
 Innovation Hackathon for Medical Students, hosted by Sheba Medical Center (Tel
 HaShomer) and the Reichman University School of Medicine. This repo is the
-working directory for **Challenge 3: Patient Experience in the Hospital — From
-Today to the Hospital of the Future** (see `00_Overview/challenge3_theask.pdf`
-for the original Hebrew brief).
+working directory for **Challenge 2: Smart Management of Ambulatory Patients**
+(Hebrew: ניהול חכם של מטופלים אמבולטוריים; see
+`00_Overview/challenge2_theask.pdf` for the original Hebrew brief).
 
 ### Challenge brief (translated summary)
 
-- **Background**: The modern hospital is a complex system where patients,
-  families, and staff move between many spaces, processes, and services.
-  Beyond the medical treatment itself, the experience of the stay — from the
-  first moment to discharge — directly shapes the patient's sense of safety,
-  understanding, cooperation, and trust in the system.
-- **Problem**: Patient experience today is fragmented, not always intuitive,
-  and often comes with uncertainty, long waits, difficulty finding your way,
-  and no real-time information. The patient journey needs to be redesigned to
-  be continuous, clear, personalized, and accessible — even in a complex,
-  high-load environment.
-- **Stakeholders**: Hospitalized patients, ambulatory patients, family
-  members/companions, medical and nursing staff, logistics teams, patient
-  experience/service/operations staff, medical information systems, hospital
-  management.
-- **Why it matters**: Better patient experience isn't just "comfort" — it
-  affects care quality, patient compliance with medical instructions, error
-  reduction, staff efficiency, and how trustworthy and advanced the hospital
-  is perceived to be.
-- **Constraints**: Solutions must be workable in a complex real medical
-  environment, safe, compliant with regulation and privacy, integrable with
-  existing systems, and must not add burden to already-overloaded staff.
-- **Challenge question**: How can we redesign the patient's hospital
-  experience to be continuous, clear, personalized, and digitally-physically
-  integrated — from arrival to end of treatment — building the "hospital of
-  the future" already today?
+- **Background**: Hospitals are treating a growing number of ambulatory
+  (outpatient) patients, while clinic resources, staffing, and appointment
+  availability remain limited.
+- **Problem**: Not every patient needs the same level of care or the same
+  visit format, yet most currently go through a similar process. This creates
+  overload, long wait times, and suboptimal use of clinic resources.
+- **Stakeholders (per brief)**: Patients, physicians, nurses,
+  scheduling/coordination teams, and hospital management.
+- **Why it matters**: Better patient prioritization can shorten wait times,
+  reduce overload, improve patient experience, make better use of staff
+  availability, and increase the number of patients treated without a
+  significant increase in resources.
+- **Constraints (per brief)**: Solutions must preserve patient safety,
+  information privacy, regulatory compliance, integration with existing
+  information systems, and be feasible without a significant increase in
+  staff or budget.
+- **Challenge question**: How can we intelligently prioritize, route, and
+  manage ambulatory patients so that each patient receives the most
+  appropriate level of care, while making optimal use of the hospital's
+  existing resources?
+
+### Journey framing for ideation
+
+The official brief above is framed around prioritization/routing. This team
+has chosen to explore it through the lens of the ambulatory patient's
+end-to-end journey — pick **one** touchpoint below to focus the prototype on
+(see Build sequence):
+
+- הכנה לפני ההגעה — Preparation and instructions before arrival
+- תיאום תורים — Appointment coordination
+- הגעה ורישום — Arrival, identification, registration and check-in
+- התמצאות וניווט — Navigation between clinics, exams, and treatment stations
+- זמני המתנה — Waiting-time communication
+- בדיקות וטיפול — Examinations and treatment, incl. coordination between
+  clinical and administrative teams
+- שחרור והמשך טיפול — Discharge instructions
+- רצף טיפולי — Follow-up and continuity of care
+
+**Relevant users/stakeholders for ideation** (broader than the brief's core
+list above): ambulatory patients, family members/companions, medical teams,
+administrative teams, hospital management, health funds and external
+partners. Pick **one** for the prototype.
+
+**Additional design constraints to weigh alongside the brief's**:
+accessibility, staff workload, operational feasibility, and continuity of
+care (רצף טיפולי).
 
 ## What we are building
 
@@ -52,7 +73,13 @@ to build broad functionality.
 
 **Example flow shape** (not the literal content — the actual journey gets
 picked at the hackathon):
-`Start → current status → next instruction → unexpected change → resolution → summary`
+`Pre-arrival prep → check-in/arrival → wait for exam → unexpected change (e.g. reprioritization/delay) → resolution → follow-up summary`
+
+Note: the redesigned experience does not have to be a purely digital/app
+solution — it may include physical, process, or staffing changes. The
+clickable prototype only needs to dramatize the one moment that proves the
+insight; other parts of the concept can be explained narratively in the
+pitch.
 
 ### Explicitly out of scope — do NOT build
 
@@ -64,6 +91,8 @@ picked at the hackathon):
 - Complete clinical logic
 - Interfaces for every stakeholder type (pick one user, one journey)
 - More than one core journey
+- Invented clinical claims, hospital statistics, or measured outcomes not
+  present in the challenge brief
 
 Anything in this list gets described in the pitch as "future integration,"
 not built.
@@ -103,8 +132,8 @@ already nailed down, in order:
 
 1. **Identify the highest-value problem** within the challenge brief above.
 2. **Define the user, moment, barrier, and desired outcome** — one specific
-   persona, one specific moment in their hospital journey, what's blocking
-   them, what "better" looks like.
+   persona, one specific moment in their ambulatory patient journey, what's
+   blocking them, what "better" looks like.
 3. **Choose the interaction that proves the insight** — the one moment in the
    flow that makes the audience get it. This is usually the "unexpected
    change / intervention" screen.
@@ -128,8 +157,10 @@ update once slide 8 is done. This file stays static.
 ## Repo layout
 
 - `00_Overview/` — challenge brief and event materials (reference only, don't
-  edit)
-- `01_Ideation/` — ideation workbooks (Google Slides shortcuts)
+  edit). `00_Overview/Old/` holds superseded material from the previous
+  challenge assignment.
+- `01_Ideation/` — ideation workbooks (Google Slides/Docs shortcuts)
+- `02_Final Deck/` — final pitch deck (Google Slides shortcut)
 - Prototype code goes in a new top-level folder created at build time (e.g.
   `prototype/` or `src/`) — keep it separate from the overview/ideation
   materials above
@@ -150,6 +181,13 @@ update once slide 8 is done. This file stays static.
   demo journey — don't rely on a type check or a glance at the code.
 - Preserve working functionality when making changes late in the build —
   a regression right before the demo is worse than a missing nice-to-have.
+- Don't assume the solution has to be an app or purely digital — the
+  prototype demonstrates one moment of a broader concept that may include
+  physical/process changes; don't force every stakeholder interaction into
+  a screen just because the deliverable is a clickable prototype.
+- Don't invent clinical claims, hospital statistics, or measured outcomes.
+  If a number or claim isn't in the challenge brief or `HACKATHON.md`, leave
+  it out or mark it as illustrative/fictional in the copy.
 
 ## Live tracking
 
